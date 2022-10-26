@@ -38,7 +38,7 @@ let getMoney = new Promise(
 getMoney
     .then(function () {
         let seeBalance = confirm(`Подивитися баланс карті?`);
-        return seeBalance ? Promise.resolve() : Promise.reject();
+        return seeBalance ? Promise.resolve(userData) : Promise.reject({userData, bankData});
     })
     .then(function () {
         let currency;
